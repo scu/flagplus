@@ -2,7 +2,7 @@
 
 flagplus is a wrapper and extension to the Go core flag package.
 The flagplus.FlagSet type emphasizes simple declarative flag definitions,
-easily divisible by responsible functions like main() or init()
+easily divisible by main() or init()
 
 The Usage output is readable and informative, including a summary option list.
 
