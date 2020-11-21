@@ -3,7 +3,7 @@ package flagplus_test
 import (
 	"fmt"
 
-	"github.com/scu/util/flagplus"
+	"github.com/scu/flagplus"
 )
 
 func Example() {
