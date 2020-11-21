@@ -1,4 +1,4 @@
-# flagplus Go Library
+# flagplus Go Package
 
 flagplus is a wrapper and extension to the Go core flag package.
 The flagplus.FlagSet type emphasizes simple declarative flag definitions,
