@@ -332,7 +332,9 @@ func flagDefaultValue(flag *Flag) string {
 	case FLOAT:
 		s = fmt.Sprintf(" (default=%v)", flag.defaultValue.(float64))
 	case STRING:
-		s = fmt.Sprintf(" (default=%v)", flag.defaultValue.(string))
+		if flag.defaultValue.(string) != "" {
+			s = fmt.Sprintf(" (default=%v)", flag.defaultValue.(string))
+		}
 	}
 
 	return s
