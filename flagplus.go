@@ -50,6 +50,7 @@ type FlagSet struct {
 	flag        map[string]*Flag // Flags in the FlagSet
 	name        string           // Optional name of the flag set
 	description string           // Optional description of command line
+	semantics   string           // Semantic description of arguments after flags
 }
 
 // String implements fmt.string interface for Flag
@@ -88,6 +89,11 @@ func (fs *FlagSet) String() string {
 	s += "}\n"
 
 	return s
+}
+
+// AddSemantics adds argument semantics after flags
+func (fs *FlagSet) AddSemantics(desc string) {
+	fs.semantics = desc
 }
 
 // AddStringFlag adds a string flag to a FlagSet
@@ -379,6 +385,9 @@ func (fs *FlagSet) Usage() string {
 		}
 		s = strings.TrimRight(s, "|")
 		s += "]"
+		if fs.semantics != "" {
+			s += fmt.Sprintf(" %s", fs.semantics)
+		}
 	}
 
 	// Full option description
